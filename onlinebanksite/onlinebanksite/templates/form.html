@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<h1>Registration Form</h1>
+<body>
+{% csrf_token %}
+
+<table>
+  <tr>
+    <td><label for="name">Name:</label></td>
+    <td><input type="text" name="name" id="name" placeholder="your name"></td>
+  </tr>
+  <tr>
+    <td><label for="dob">DOB:</label></td>
+    <td><input type="date" name="dob" id="dob" placeholder="DOB"></td>
+  </tr>
+  <tr>
+    <td><label for="age">Age:</label></td>
+    <td><input type="number" name="number" id="number" placeholder="Age"></td>
+  </tr>
+  <tr>
+    <td><label for="gender">Gender:</label></td>
+    <td>Male: <input type="radio" name="gender" value="male">
+      Female: <input type="radio" name="gender" value="female">
+      Transgender: <input type="radio" name="gender" value="Transgender"></td>
+  </tr>
+  <tr>
+    <td><label for="phoneNumber">Phone Number:</label></td>
+    <td><input type="number" name="phoneNumber" id="phoneNumber"></td>
+  </tr>
+  <tr>
+    <td><label for="email">Email:</label></td>
+    <td><input type="text" name="email" id="email" placeholder="your email"></td>
+  </tr>
+
+  <tr>
+    <td><label for="address">Address:</label></td>
+    <td><textarea name="address" id="address" placeholder="Address"></textarea></td>
+  </tr>
+
+
+  <tr>
+    <td><label for="">District</label></td>
+    <td>
+      <select name="slct1" id="slct1" class="district-dropdown" onchange="populate(this.id,'slct2')">
+        <option value="">--Select District--</option>
+        <option value="Thrissur">Thrissur</option>
+        <option value="Ernamkulam">Ernamkulam</option>
+
+
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td> <label for="">Branch:</label></td>
+    <td>
+      <select id="slct2" name="slct2" class="branch-dropdown">
+        <option value="">--Select Branch--</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td><label for="Account">Account Type</label></td>
+    <td>
+      <select id="account" name="account">
+        <option value="">Choose</option>
+        <option value="Savings">Savings</option>
+        <option value="Current">Current</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td><label for="material">Materials Required :</label></td>
+    <td>
+      <input type="checkbox" id="debit" name="materials[]" value="Debit Card">
+      <label for="debit">Debit Card</label>
+      <input type="checkbox" id="credit" name="materials[]" value="Credit Card">
+      <label for="credit">Credit Card</label>
+      <input type="checkbox" id="cheque" name="materials[]" value="Chequebook">
+      <label for="debit">Cheque Book</label></td>
+  </tr>
+  <tr div class="button">
+    <td colspan="2"><input type="submit" class="submit" value="SUBMIT" onclick="location.href='{% url 'submitlink' %}'" ></td>
+
+  </tr>
+   <tr div class="text-center">
+      <td colspan="2"><input type="submit" class="logout" value="LOGOUT" onclick="location.href='{% url 'home' %}'" ></td>
+
+  </tr>
+</table>
+
+  <script>
+
+      function populate(s1,s2)
+      {
+        var s1 =document.getElementById(s1);
+        var s2 =document.getElementById(s2);
+
+        s2.innerHTML ="";
+
+        if(s1.value == "Thrissur")
+        {
+            var optionArray = ['chavakkad|Chavakkad','kunnamkulam|Kunnamkulam','wadakkancherry|Wadakkancherry','mannuthy|Mannuthy'];
+
+        }
+        else if(s1.value == "Ernakulam")
+        {
+            var optionArray = ['edappally|Edappally','vytila|Vytila','kadavanthara|Kadavanthara','aluva|Aluva'];
+
+        }
+
+        for(var option in optionArray)
+        {
+          var pair = optionArray[option].split("|");
+          var newoption =document.createElement("option");
+
+          newoption.value= pair[0];
+          newoption.innerHTML=pair[1];
+          s2.options.add(newoption);
+        }
+
+
+      }
+
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

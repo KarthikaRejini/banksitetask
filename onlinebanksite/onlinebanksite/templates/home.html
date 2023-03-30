@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Online Banking Site</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar" style="background-color: #e3f2fd;">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Online banking</span>
+
+        <a href="{% url 'register' %}" type="button" class="btn btn-success btn-lg">Register</a>
+        <a href="{% url 'login_user' %}" type="button" class="btn btn-successlg">login</a>
+
+      <ul class="nav nav-pills">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            BRANCHES
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Trivandrum">Trivandrum</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Ernakulam">Ernakulam</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Thrissur">Thrissur</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kozhikode">Kozhikode</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Idukki">Idukki</a></li>
+
+
+          </ul>
+        </li>
+      </ul>
+  </div>
+  </div>
+</nav>
+  </nav>
+  <h1 class="text-center text-success">welcome to Online Banking</h1>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<div class="text-align:center">
+<p>Online banking, also known as internet banking, web banking or home banking, is an electronic payment system that enables customers of a bank or other financial institution
+    to conduct a range of financial transactions through the financial institution's website. The online banking system will typically connect to or be part of the core banking system
+    operated by a bank to provide customers access to banking services in addition to or in place of traditional branch banking. Online banking significantly reduces the banks' operating
+    cost by reducing reliance on a branch network and offers greater convenience to some customers by lessening the need to visit a branch bank as well as the convenience
+    of being able to perform banking transactions even when branches are closed. Internet banking provides personal and corporate banking services offering features such as viewing account balances,
+    obtaining statements, checking recent transactions, transferring money between accounts, and making payments.</p></div>
+    <div class="text-align:center">
+    <a href="{% url 'login_user' %}" type="button" class="btn btn-success btn-lg">CLICK HERE</a>
+    </div>
+
+</div>
+</body>
+</html>
